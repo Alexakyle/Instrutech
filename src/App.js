@@ -22,9 +22,13 @@ function App() {
   const route = useLocation();
 
   // Show/Hide scroll to top button
-  window.addEventListener("scroll", () => {
-    window.scrollY > 500 ? setShowButton(true) : setShowButton(false);
-  });
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowButton(window.scrollY > 500);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleCloseDropdown = (e) => {
     dispatch(closeDropdown());
@@ -35,11 +39,11 @@ function App() {
   }, [route]);
 
   return (
-    <div>
+    <div className="w-full bg-white dark:bg-[#0F172A]">
       <Navbar />
       <Dropdown />
       <div
-        className="min-h-screen pb-40"
+        className="min-h-screen"
         onClick={handleCloseDropdown}
         onMouseOver={() => dispatch(closeDropdown())}
       >
@@ -53,12 +57,9 @@ function App() {
           <Route path="/careers" element={<Careers />} /> 
         </Routes>
       </div>
-      <div className="px-[2%] md:px-[6%] bg-card-dark border border-card-dark">
-        <NewsLetter />
-        <div className="mt-20">
-          <Footer />
-        </div>
-      </div>
+      
+      <NewsLetter />
+      <Footer />
       <BackToTopButton showButton={showButton} />
     </div>
   );

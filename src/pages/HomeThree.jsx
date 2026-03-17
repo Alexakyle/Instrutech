@@ -6,7 +6,6 @@ import {
 } from "../components/common/page-componets";
 import {
   Filters,
-  GetInTouch,
   Hero,
   Testimonial,
 } from "../components/home/home-3";
@@ -20,7 +19,6 @@ const HomeThree = () => {
         <WhatWeDo />
         <Featured />
         <Categories />
-        <GetInTouch />
         <Team />
         <Testimonial />
       </div>

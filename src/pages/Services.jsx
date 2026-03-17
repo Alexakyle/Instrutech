@@ -83,9 +83,9 @@ const Services = () => {
   };
 
   return (
-    <div className="relative pt-24 max-w-7xl mx-auto px-4 pb-16 overflow-hidden">
+    <div className="relative pt-24 max-w-7xl mx-auto px-4 pb-16 overflow-hidden bg-white dark:bg-[#0F172A]">
       {/* Animated Green Minimal Background - More Visible & Faster */}
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0">
         {/* Diagonal moving lines - More opaque */}
         <div className="absolute inset-0">
           {[...Array(15)].map((_, i) => (
@@ -272,7 +272,7 @@ const Services = () => {
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => setActiveCategory(cat.id)}
-            className={`relative px-6 py-3 rounded-2xl font-medium transition-all duration-300 flex items-center gap-2 backdrop-blur-sm ${
+            className={`relative px-6 py-3 rounded-2xl font-medium transition-all duration-300 flex items-center gap-2 ${
               activeCategory === cat.id
                 ? "bg-primary text-white shadow-lg shadow-primary/30"
                 : "bg-white/80 dark:bg-[#1A2E1F]/80 text-gray-700 dark:text-gray-300 hover:bg-[#F0FDF4]/80 dark:hover:bg-[#2A3A2E]/80 border border-[#E8F5E9] dark:border-[#2A3A2E]"
@@ -309,7 +309,7 @@ const Services = () => {
               transition={{ delay: index * 0.05 }}
               onHoverStart={() => setHoveredCard(index)}
               onHoverEnd={() => setHoveredCard(null)}
-              className="group relative bg-white/90 dark:bg-[#1A2E1F]/90 backdrop-blur-sm p-6 rounded-2xl border border-[#E8F5E9] dark:border-[#2A3A2E] hover:border-primary/50 hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden"
+              className="group relative bg-white dark:bg-[#1A2E1F] p-6 rounded-2xl border border-[#E8F5E9] dark:border-[#2A3A2E] hover:border-primary/50 hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden"
             >
               {/* Minimal green background on hover */}
               <motion.div
@@ -376,7 +376,7 @@ const Services = () => {
           <motion.div
             key={index}
             whileHover={{ scale: 1.05, y: -5 }}
-            className="relative bg-white/90 dark:bg-[#1A2E1F]/90 backdrop-blur-sm p-6 rounded-2xl border border-[#E8F5E9] dark:border-[#2A3A2E] text-center group cursor-pointer overflow-hidden"
+            className="relative bg-white dark:bg-[#1A2E1F] p-6 rounded-2xl border border-[#E8F5E9] dark:border-[#2A3A2E] text-center group cursor-pointer overflow-hidden"
           >
             {/* Hover gradient */}
             <motion.div
