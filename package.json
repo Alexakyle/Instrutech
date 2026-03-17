@@ -1,6 +1,9 @@
 {
-  "name": "react-base-project",
+  "name": "instrutech",
   "version": "0.1.0",
+  "engines": {
+    "node": "18.x"
+  },
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
