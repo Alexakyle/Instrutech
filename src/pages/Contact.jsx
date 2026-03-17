@@ -134,9 +134,9 @@ const Contact = () => {
     setIsSubmitting(true);
     
     // Your EmailJS credentials
-    const serviceId = 'service_gkqhy8i';
-    const templateId = 'template_p2w9fxd';
-    const publicKey = 'SqibtVhvsg8yaydio';
+    const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+    const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+    const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
     
     // Add timestamp to the data being sent
     const templateParams = {
