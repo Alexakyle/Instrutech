@@ -1,10 +1,5 @@
-export { default as BlogPostsList } from "./BlogPostsList";
 export { default as AboutUs } from "./AboutUs";
 export { default as Categories } from "./Categories";
 export { default as Featured } from "./Featured";
-export { default as Feeds } from "./Feeds";
-export { default as Pagination } from "./Pagination";
-export { default as SocialIcons } from "./SocialIcons";
 export { default as Team } from "./Team";
-export { default as Testimonial } from "./Testimonial";
 export { default as WhatWeDo } from "./WhatWeDo";

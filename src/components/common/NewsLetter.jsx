@@ -154,7 +154,7 @@ const QuoteSection = () => {
             </div>
             <div className="flex items-center gap-1 bg-white/10 px-2 py-1 rounded-full">
               <span className="w-1 h-1 bg-green-400 rounded-full animate-pulse" />
-              <span>⏱️ 24h response</span>
+              <span>⏱️ Fast response</span>
             </div>
           </motion.div>
         </motion.div>

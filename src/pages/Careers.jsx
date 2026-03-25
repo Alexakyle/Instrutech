@@ -197,10 +197,10 @@ const Careers = () => {
             className="flex flex-wrap justify-center gap-4 mt-6"
           >
             <span className="bg-[#F0FDF4] dark:bg-[#1A2E1F] px-4 py-2 rounded-full text-primary font-medium border border-primary/20">
-              🚀 WE ARE HIRING!
+              WE ARE HIRING!
             </span>
             <span className="bg-[#F0FDF4] dark:bg-[#1A2E1F] px-4 py-2 rounded-full text-primary font-medium border border-primary/20">
-              ✨ FRESH GRADUATES ARE WELCOME
+              FRESH GRADUATES ARE WELCOME
             </span>
           </motion.div>
         </motion.div>

@@ -219,8 +219,7 @@ const Footer = () => {
                 { icon: GiElectric, name: "Electrical Calibration", color: "from-yellow-500 to-orange-500" },
                 { icon: GiThermometerHot, name: "Temperature Calibration", color: "from-red-500 to-pink-500" },
                 { icon: GiWeightScale, name: "Force & Mass Calibration", color: "from-purple-500 to-indigo-500" },
-                { name: "Equipment Supply", color: "from-green-500 to-emerald-500" },
-                { name: "Training Programs", color: "from-primary to-[#22C55E]" },
+
               ].map((service, index) => (
                 <motion.li
                   key={index}
@@ -293,10 +292,7 @@ const Footer = () => {
               className="mt-8 p-4 bg-gradient-to-r from-primary/5 to-[#22C55E]/5 rounded-xl border border-primary/20"
               whileHover={{ scale: 1.02 }}
             >
-              <p className="text-xs text-gray-600 dark:text-gray-400 flex items-center gap-2">
-                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                <span className="font-medium text-primary">24/7 Support Available</span>
-              </p>
+              
             </motion.div>
           </motion.div>
 

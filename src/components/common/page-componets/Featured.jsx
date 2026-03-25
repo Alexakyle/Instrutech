@@ -45,27 +45,14 @@ const Featured = () => {
   ];
 
   return (
-    <div className="relative w-full bg-gradient-to-b from-white to-[#F8FAF0] dark:from-[#0F172A] dark:to-[#1A2E1F] overflow-hidden">
-      {/* Full-screen Animated Background */}
-      <div className="absolute inset-0 w-full h-full">
-        {/* Floating orbs */}
+    <div className="w-full py-10 pb-16 relative overflow-hidden">
+      {/* Animated Background Design */}
+      <div className="absolute inset-0 w-full h-full pointer-events-none">
+        {/* Gradient orbs */}
         <motion.div
           animate={{
-            x: [0, 150, 0],
-            y: [0, -100, 0],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-          className="absolute top-20 left-20 w-96 h-96 bg-primary/5 dark:bg-primary/10 rounded-full blur-3xl"
-        />
-        <motion.div
-          animate={{
-            x: [0, -150, 0],
-            y: [0, 100, 0],
+            x: [0, 200, 0],
+            y: [0, -150, 0],
             scale: [1, 1.3, 1],
           }}
           transition={{
@@ -73,40 +60,133 @@ const Featured = () => {
             repeat: Infinity,
             ease: "linear"
           }}
-          className="absolute bottom-20 right-20 w-[30rem] h-[30rem] bg-[#22C55E]/10 dark:bg-[#22C55E]/20 rounded-full blur-3xl"
+          className="absolute top-20 left-20 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl"
         />
-        
-        {/* Animated lines */}
+        <motion.div
+          animate={{
+            x: [0, -200, 0],
+            y: [0, 150, 0],
+            scale: [1, 1.4, 1],
+          }}
+          transition={{
+            duration: 30,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+          className="absolute bottom-20 right-20 w-[600px] h-[600px] bg-[#22C55E]/5 rounded-full blur-3xl"
+        />
+
+        {/* Floating particles */}
+        {[...Array(30)].map((_, i) => (
+          <motion.div
+            key={i}
+            animate={{
+              y: [0, -50, 0],
+              x: [0, Math.random() * 40 - 20, 0],
+              opacity: [0, 0.3, 0],
+              scale: [0, 1, 0],
+            }}
+            transition={{
+              duration: 5 + Math.random() * 5,
+              repeat: Infinity,
+              delay: Math.random() * 2,
+            }}
+            className="absolute w-1 h-1 bg-primary/30 rounded-full"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+          />
+        ))}
+
+        {/* Moving diagonal lines */}
         <div className="absolute inset-0">
-          {[...Array(10)].map((_, i) => (
+          {[...Array(12)].map((_, i) => (
             <motion.div
               key={i}
               animate={{
                 x: ["-100%", "100%"],
               }}
               transition={{
-                duration: 15 + i * 2,
+                duration: 12 + i * 2,
                 repeat: Infinity,
                 ease: "linear",
                 delay: i * 1.5,
               }}
-              className="absolute w-[200%] h-[1px] bg-gradient-to-r from-transparent via-primary/20 dark:via-primary/30 to-transparent"
-              style={{ top: `${i * 10}%` }}
+              className="absolute w-[200%] h-[2px] bg-gradient-to-r from-transparent via-primary/10 to-transparent"
+              style={{ 
+                top: `${i * 8}%`,
+                transform: `rotate(${i * 3}deg)`
+              }}
             />
           ))}
         </div>
 
-        {/* Grid pattern */}
+        {/* Animated grid pattern */}
         <div 
           className="absolute inset-0"
           style={{
-            backgroundImage: `radial-gradient(circle at 20px 20px, rgba(22, 101, 52, 0.05) 1px, transparent 1px)`,
-            backgroundSize: '40px 40px',
+            backgroundImage: `
+              linear-gradient(rgba(22, 101, 52, 0.03) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(22, 101, 52, 0.03) 1px, transparent 1px)
+            `,
+            backgroundSize: '50px 50px',
           }}
+        >
+          <motion.div
+            animate={{
+              backgroundPosition: ["0px 0px", "50px 50px"],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `
+                radial-gradient(circle at 20px 20px, rgba(34, 197, 94, 0.1) 2px, transparent 2px)
+              `,
+              backgroundSize: '40px 40px',
+            }}
+          />
+        </div>
+
+        {/* Floating geometric shapes */}
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+          className="absolute top-1/4 left-1/4 w-32 h-32 border-2 border-primary/10 rounded-2xl"
         />
+        <motion.div
+          animate={{ rotate: -360 }}
+          transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
+          className="absolute bottom-1/3 right-1/3 w-40 h-40 border-2 border-[#22C55E]/10 rotate-45"
+        />
+
+        {/* Glowing dots */}
+        {[...Array(15)].map((_, i) => (
+          <motion.div
+            key={`glow-${i}`}
+            animate={{
+              scale: [1, 1.5, 1],
+              opacity: [0.1, 0.3, 0.1],
+            }}
+            transition={{
+              duration: 3 + Math.random() * 2,
+              repeat: Infinity,
+              delay: Math.random() * 2,
+            }}
+            className="absolute w-2 h-2 bg-primary/20 rounded-full blur-sm"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+          />
+        ))}
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 py-10 pb-16">
+      <div className="relative max-w-7xl mx-auto px-4">
         {/* Header with parallax */}
         <motion.div
           style={{
@@ -163,13 +243,12 @@ const Featured = () => {
           </motion.p>
         </motion.div>
 
-        {/* Rest of your component remains exactly the same... */}
         {/* Interactive Tabs */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="flex justify-center gap-2 mb-8"
+          className="flex flex-wrap justify-center gap-2 mb-8"
         >
           {tabs.map((tab) => (
             <motion.button
@@ -177,10 +256,10 @@ const Featured = () => {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setActiveTab(tab.id)}
-              className={`relative px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center gap-2 ${
+              className={`relative px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center gap-2 backdrop-blur-sm ${
                 activeTab === tab.id
                   ? "bg-primary text-white shadow-lg shadow-primary/30"
-                  : "bg-white dark:bg-[#1A2E1F] text-gray-700 dark:text-gray-300 hover:bg-[#F0FDF4] dark:hover:bg-[#2A3A2E] border border-[#E8F5E9] dark:border-[#2A3A2E]"
+                  : "bg-white/70 dark:bg-[#1A2E1F]/70 text-gray-700 dark:text-gray-300 hover:bg-[#F0FDF4]/80 dark:hover:bg-[#2A3A2E]/80 border border-[#E8F5E9] dark:border-[#2A3A2E]"
               }`}
             >
               <tab.icon className="text-lg" />
@@ -208,7 +287,7 @@ const Featured = () => {
                   whileHover={{ y: -10, scale: 1.02 }}
                   onHoverStart={() => setHoveredCard(0)}
                   onHoverEnd={() => setHoveredCard(null)}
-                  className="relative bg-white dark:bg-[#1A2E1F] p-8 rounded-2xl border border-[#E8F5E9] dark:border-[#2A3A2E] shadow-xl hover:shadow-2xl transition-all duration-300 group overflow-hidden"
+                  className="relative bg-white/80 dark:bg-[#1A2E1F]/80 backdrop-blur-sm p-8 rounded-2xl border border-[#E8F5E9] dark:border-[#2A3A2E] shadow-xl hover:shadow-2xl transition-all duration-300 group overflow-hidden"
                 >
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent"
@@ -244,7 +323,7 @@ const Featured = () => {
                   whileHover={{ y: -10, scale: 1.02 }}
                   onHoverStart={() => setHoveredCard(1)}
                   onHoverEnd={() => setHoveredCard(null)}
-                  className="relative bg-white dark:bg-[#1A2E1F] p-8 rounded-2xl border border-[#E8F5E9] dark:border-[#2A3A2E] shadow-xl hover:shadow-2xl transition-all duration-300 group overflow-hidden"
+                  className="relative bg-white/80 dark:bg-[#1A2E1F]/80 backdrop-blur-sm p-8 rounded-2xl border border-[#E8F5E9] dark:border-[#2A3A2E] shadow-xl hover:shadow-2xl transition-all duration-300 group overflow-hidden"
                 >
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent"
@@ -280,7 +359,7 @@ const Featured = () => {
                   whileHover={{ y: -10, scale: 1.02 }}
                   onHoverStart={() => setHoveredCard(2)}
                   onHoverEnd={() => setHoveredCard(null)}
-                  className="relative bg-white dark:bg-[#1A2E1F] p-8 rounded-2xl border border-[#E8F5E9] dark:border-[#2A3A2E] shadow-xl hover:shadow-2xl transition-all duration-300 group overflow-hidden"
+                  className="relative bg-white/80 dark:bg-[#1A2E1F]/80 backdrop-blur-sm p-8 rounded-2xl border border-[#E8F5E9] dark:border-[#2A3A2E] shadow-xl hover:shadow-2xl transition-all duration-300 group overflow-hidden"
                 >
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent"
@@ -321,7 +400,7 @@ const Featured = () => {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.1 }}
                       whileHover={{ scale: 1.05, y: -5 }}
-                      className="bg-white dark:bg-[#1A2E1F] p-6 rounded-xl border border-[#E8F5E9] dark:border-[#2A3A2E] hover:border-primary/50 transition-all group"
+                      className="bg-white/80 dark:bg-[#1A2E1F]/80 backdrop-blur-sm p-6 rounded-xl border border-[#E8F5E9] dark:border-[#2A3A2E] hover:border-primary/50 transition-all group"
                     >
                       <service.icon className="text-primary text-2xl mb-3 group-hover:rotate-12 transition-transform" />
                       <h4 className="font-bold text-gray-900 dark:text-white mb-2">{service.name}</h4>
@@ -334,7 +413,7 @@ const Featured = () => {
 
             {activeTab === 2 && (
               <div className="col-span-3">
-                <div className="bg-gradient-to-br from-primary/5 to-[#22C55E]/5 p-8 rounded-3xl border border-[#E8F5E9] dark:border-[#2A3A2E]">
+                <div className="bg-gradient-to-br from-primary/5 to-[#22C55E]/5 backdrop-blur-sm p-8 rounded-3xl border border-[#E8F5E9] dark:border-[#2A3A2E]">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {[
                       { title: "Quality First", desc: "Quality of products and services always comes first" },
@@ -383,7 +462,7 @@ const Featured = () => {
                 transformStyle: "preserve-3d",
                 perspective: 1000,
               }}
-              className="relative bg-white dark:bg-[#1A2E1F] p-6 rounded-2xl border border-[#E8F5E9] dark:border-[#2A3A2E] text-center group cursor-pointer shadow-xl hover:shadow-2xl"
+              className="relative bg-white/80 dark:bg-[#1A2E1F]/80 backdrop-blur-sm p-6 rounded-2xl border border-[#E8F5E9] dark:border-[#2A3A2E] text-center group cursor-pointer shadow-xl hover:shadow-2xl"
             >
               <div 
                 className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"

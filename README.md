@@ -1,5 +1,5 @@
 
---- APP DEV PRELIM ; Poblacion, Alexa Kyle N. ---
+--- OJT Project for Instrutech Philippines Inc ; Poblacion, Alexa Kyle N. ---
 
 # `npm start`
 
