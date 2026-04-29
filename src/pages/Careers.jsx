@@ -1,6 +1,6 @@
 import { motion, useMotionValue, useTransform, AnimatePresence } from "framer-motion";
 import { FiBriefcase, FiMapPin, FiMail, FiUsers, FiTrendingUp, FiHeart, FiStar, FiAward, FiClock, FiChevronRight, FiSend, FiCheckCircle } from "react-icons/fi";
-import { GiMicroscope, GiGearHammer, GiWeightScale, GiElectric } from "react-icons/gi";
+import { GiMicroscope } from "react-icons/gi";
 import { useState } from "react";
 
 const Careers = () => {

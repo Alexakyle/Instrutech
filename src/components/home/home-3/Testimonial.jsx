@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { FaQuoteRight, FaStar, FaCertificate, FaRegGem } from "react-icons/fa";
+import { motion} from "framer-motion";
+import { FaQuoteRight, FaStar, FaCertificate } from "react-icons/fa";
 import { BsChevronLeft, BsChevronRight, BsCalendarCheck, BsBuilding, BsShieldCheck } from "react-icons/bs";
-import { GiGearHammer, GiThermometerHot, GiElectric, GiMicroscope, GiSpanner, GiWeightScale } from "react-icons/gi";
-import { FiAward, FiClock, FiTrendingUp, FiThumbsUp } from "react-icons/fi";
+import { GiGearHammer, GiThermometerHot, GiElectric, GiMicroscope } from "react-icons/gi";
+import { FiAward, FiClock, FiThumbsUp } from "react-icons/fi";
 import { RiShieldStarLine } from "react-icons/ri";
 import { HiOutlineSparkles } from "react-icons/hi";
 
@@ -73,7 +73,7 @@ const testimonials = [
 const Testimonial = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [isAutoPlaying] = useState(true);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const cardRef = useRef(null);
   const autoplayRef = useRef(null);

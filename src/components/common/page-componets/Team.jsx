@@ -1,7 +1,7 @@
 import React from "react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { FiMail, FiPhone, FiAward, FiTool } from "react-icons/fi";
-import { GiMicroscope, GiGearHammer, GiWeightScale, GiElectric, GiThermometerHot } from "react-icons/gi";
+import { GiMicroscope, GiGearHammer, GiElectric } from "react-icons/gi";
 import { motion } from "framer-motion";
 import { useState } from "react";
 

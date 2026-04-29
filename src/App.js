@@ -14,7 +14,8 @@ import {
 } from "./pages";
 import { closeDropdown } from "./features/uiSlice";
 import Dropdown from "./components/common/DropDown";
-import NewsLetter from "./components/common/NewsLetter";
+import NewsLetter from "./components/common/Quote";
+import FAQChatbot from "./components/common/FAQChatbot"; // Add this import
 
 function App() {
   const [showButton, setShowButton] = useState(false);
@@ -61,6 +62,7 @@ function App() {
       <NewsLetter />
       <Footer />
       <BackToTopButton showButton={showButton} />
+      <FAQChatbot /> {/* Add this line here */}
     </div>
   );
 }

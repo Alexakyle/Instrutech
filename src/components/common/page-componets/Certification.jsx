@@ -1,9 +1,8 @@
 import { useRef, useState } from "react";
 import { FiChevronLeft, FiChevronRight, FiAward, FiCheckCircle, FiShield } from "react-icons/fi";
-import { GiMicroscope, GiTestTubes } from "react-icons/gi";
 import { useNavigate } from "react-router-dom";
 
-const CertificationsShowcase = () => {
+const Certifications = () => {
   const containerRef = useRef(null);
   const [isScroll, setIsscroll] = useState(false);
   const navigate = useNavigate();
@@ -122,4 +121,4 @@ const CertificationsShowcase = () => {
   );
 };
 
-export default CertificationsShowcase;
+export default Certifications;

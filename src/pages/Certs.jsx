@@ -1,5 +1,5 @@
-import { motion, useMotionValue, useTransform, AnimatePresence } from "framer-motion";
-import { FiAward, FiFileText, FiCheckCircle, FiExternalLink, FiEye, FiShield, FiStar, FiTrendingUp } from "react-icons/fi";
+import { motion, useMotionValue, useTransform } from "framer-motion";
+import { FiAward, FiFileText, FiCheckCircle, FiExternalLink, FiEye, FiShield, FiStar } from "react-icons/fi";
 import { GiMicroscope } from "react-icons/gi";
 import { useState } from "react";
 

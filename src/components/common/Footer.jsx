@@ -2,7 +2,7 @@
 
 import { FaInstagram, FaLinkedin, FaTwitter, FaFacebook } from "react-icons/fa";
 import { FiMail, FiPhone, FiMapPin, FiArrowRight, FiCheckCircle, FiAward } from "react-icons/fi";
-import { GiMicroscope, GiTestTubes, GiThermometerHot, GiElectric, GiWeightScale } from "react-icons/gi";
+import { GiMicroscope, GiThermometerHot, GiElectric, GiWeightScale } from "react-icons/gi";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 

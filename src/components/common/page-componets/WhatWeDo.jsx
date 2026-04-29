@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { GiCrosshair, GiElectric, GiThermometerHot, GiGearHammer, GiWeightScale, GiMicroscope } from "react-icons/gi";
+import { GiCrosshair, GiElectric, GiThermometerHot, GiGearHammer, GiWeightScale } from "react-icons/gi";
 import { FiArrowRight } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -64,6 +64,12 @@ const WhatWeDo = () => {
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
     visible: { y: 0, opacity: 1 }
+  };
+
+  // Function to handle navigation to services page with optional category filter
+  const handleServiceClick = (category) => {
+    // Navigate to services page and pass category as state or query param
+    navigate('/services', { state: { selectedCategory: category } });
   };
 
   return (
@@ -204,7 +210,7 @@ const WhatWeDo = () => {
               onHoverStart={() => setActiveIndex(index)}
               onHoverEnd={() => setActiveIndex(null)}
               className="relative group cursor-pointer"
-              onClick={() => navigate(`/services/${service.category}`)}
+              onClick={() => handleServiceClick(service.category)}
             >
               {/* Background Glow */}
               <motion.div
@@ -219,7 +225,7 @@ const WhatWeDo = () => {
                 <div className="absolute inset-0">
                   <img 
                     src={service.image}
-                    alt=""
+                    alt={service.title}
                     className="w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-opacity"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-[#1A2E1F] via-transparent to-transparent" />
